@@ -13,6 +13,26 @@ export default function decorate(block) {
           picWrapper.classList.add('columns-img-col');
         }
       }
+
+      // Wrap QR code section in a bordered container
+      const qrImg = col.querySelector('img[src*="qr"]');
+      if (qrImg) {
+        const qrPicture = qrImg.closest('picture') || qrImg.closest('p');
+        if (qrPicture) {
+          const qrBox = document.createElement('div');
+          qrBox.classList.add('columns-qr-box');
+          // Collect QR image and the following elements (h3 and p)
+          const siblings = [];
+          let next = qrPicture.nextElementSibling;
+          while (next) {
+            siblings.push(next);
+            next = next.nextElementSibling;
+          }
+          qrPicture.parentElement.insertBefore(qrBox, qrPicture);
+          qrBox.appendChild(qrPicture);
+          siblings.forEach((s) => qrBox.appendChild(s));
+        }
+      }
     });
   });
 }
