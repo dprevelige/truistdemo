@@ -16,5 +16,37 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  // Identify and label sections
+  const sections = footer.querySelectorAll('.section');
+  if (sections.length >= 4) {
+    sections[0].classList.add('footer-brand');
+    sections[1].classList.add('footer-links');
+    sections[2].classList.add('footer-social');
+    sections[3].classList.add('footer-legal');
+  }
+
+  // Structure the nav columns in the links section
+  const linksSection = footer.querySelector('.footer-links');
+  if (linksSection) {
+    const wrapper = linksSection.querySelector('.default-content-wrapper');
+    if (wrapper) {
+      const columns = document.createElement('div');
+      columns.classList.add('footer-columns');
+      let currentCol = null;
+      [...wrapper.children].forEach((child) => {
+        if (child.tagName === 'H2') {
+          currentCol = document.createElement('div');
+          currentCol.classList.add('footer-column');
+          columns.append(currentCol);
+          currentCol.append(child);
+        } else if (currentCol) {
+          currentCol.append(child);
+        }
+      });
+      wrapper.textContent = '';
+      wrapper.append(columns);
+    }
+  }
+
   block.append(footer);
 }
