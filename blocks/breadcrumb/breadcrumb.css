@@ -1,0 +1,119 @@
+.breadcrumb-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+main > .section:has(.breadcrumb-wrapper) {
+  margin: 0;
+}
+
+.breadcrumb {
+  --breadcrumb-bg: rgb(248, 249, 250);
+  --breadcrumb-text: rgb(33, 37, 41);
+  --breadcrumb-height: 55px;
+  --breadcrumb-font-size: 14px;
+  --breadcrumb-border-color: rgb(64, 37, 97);
+
+  background: var(--breadcrumb-bg);
+  color: var(--breadcrumb-text);
+  font-size: var(--breadcrumb-font-size);
+  display: flex;
+  align-items: center;
+  height: var(--breadcrumb-height);
+  padding: 0 15px;
+  border-top: 3px solid var(--breadcrumb-border-color);
+}
+
+.breadcrumb > div {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.breadcrumb > div > div:first-child {
+  flex-shrink: 0;
+}
+
+.breadcrumb > div > div:first-child p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.breadcrumb > div > div:last-child {
+  overflow: hidden;
+}
+
+.breadcrumb > div > div:last-child ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.breadcrumb > div > div:last-child ul li {
+  white-space: nowrap;
+}
+
+.breadcrumb > div > div:last-child ul li a {
+  display: block;
+  padding: 8px 16px;
+  color: var(--breadcrumb-text);
+  text-decoration: none;
+  font-size: var(--breadcrumb-font-size);
+  font-weight: 400;
+}
+
+.breadcrumb > div > div:last-child ul li a:hover {
+  color: var(--link-hover-color, #0056b3);
+  text-decoration: underline;
+}
+
+/* Reset EDS button styling for breadcrumb links */
+main .breadcrumb .button-container { display: inline; }
+main .breadcrumb a.button:any-link {
+  background: none;
+  border: none;
+  color: var(--breadcrumb-text);
+  font-size: var(--breadcrumb-font-size);
+  font-weight: 400;
+  padding: 8px 16px;
+  margin: 0;
+  text-align: left;
+  text-decoration: none;
+  white-space: nowrap;
+  display: block;
+  border-radius: 0;
+}
+
+main .breadcrumb a.button:any-link:hover {
+  color: var(--link-hover-color, #0056b3);
+  text-decoration: underline;
+  background: none;
+}
+
+@media (width < 900px) {
+  .breadcrumb > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .breadcrumb {
+    height: auto;
+    padding: 8px 15px;
+  }
+
+  .breadcrumb > div > div:last-child ul {
+    flex-wrap: wrap;
+  }
+}
