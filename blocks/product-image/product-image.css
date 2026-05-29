@@ -1,0 +1,94 @@
+.product-image {
+  --block-padding: 40px 0;
+  --block-gap: 40px;
+  --heading-color: rgb(64, 37, 97);
+
+  padding: var(--block-padding);
+}
+
+.product-image > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--block-gap);
+  align-items: flex-start;
+}
+
+.product-image > div > div:first-child {
+  flex: 0 0 auto;
+}
+
+.product-image > div > div:first-child img {
+  width: 100%;
+  border-radius: 4rem;
+  display: block;
+}
+
+.product-image > div > div:last-child {
+  flex: 1;
+}
+
+.product-image h2 {
+  color: var(--heading-color);
+  margin-top: 0;
+  margin-bottom: 0.4em;
+  font-size: var(--heading-font-size-l);
+}
+
+.product-image h3 {
+  color: var(--heading-color);
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 1.2em;
+  margin-bottom: 0;
+}
+
+.product-image p {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+}
+
+main .product-image .button-container {
+  display: block;
+  margin-top: 1.2em;
+}
+
+main .product-image a.button:any-link {
+  background: none;
+  border: none;
+  color: var(--link-color);
+  font-size: var(--body-font-size-s);
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  text-decoration: none;
+  white-space: normal;
+}
+
+main .product-image a.button:any-link::after {
+  content: " →";
+}
+
+main .product-image a.button:any-link:hover {
+  text-decoration: underline;
+  color: var(--link-hover-color);
+}
+
+@media (width >= 900px) {
+  .product-image > div {
+    flex-direction: row;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  .product-image > div > div:first-child {
+    flex: 0 0 42%;
+    max-width: 42%;
+  }
+
+  .product-image > div > div:last-child {
+    flex: 1;
+  }
+}

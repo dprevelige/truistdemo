@@ -1,0 +1,81 @@
+.savings-calculator-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.savings-calculator {
+  --block-bg: rgb(241, 239, 248);
+  --block-text: rgb(46, 26, 71);
+  --block-padding: 60px 24px;
+  --card-bg: #fff;
+  --card-radius: 40px;
+
+  background: var(--block-bg);
+  color: var(--block-text);
+  padding: var(--block-padding);
+  text-align: center;
+}
+
+.savings-calculator > div {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.savings-calculator h2 {
+  font-family: var(--heading-font-family, sans-serif);
+  font-size: 28px;
+  font-weight: 200;
+  margin: 0 0 12px;
+}
+
+.savings-calculator > div:nth-child(2) p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.savings-calculator > div:nth-child(3) {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 20px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.savings-calculator > div:nth-child(3) iframe {
+  width: 100%;
+  min-height: 500px;
+  border: none;
+  display: block;
+}
+
+.savings-calculator > div:nth-child(4) p {
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: left;
+  color: var(--block-text);
+  margin: 0;
+}
+
+main .savings-calculator a.button:any-link {
+  background: none;
+  border: none;
+  color: var(--link-color);
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0;
+  margin: 0;
+  text-align: inherit;
+  text-decoration: underline;
+}
+
+@media (width >= 900px) {
+  .savings-calculator {
+    --block-padding: 60px 32px;
+  }
+
+  .savings-calculator h2 {
+    font-size: 28px;
+  }
+}

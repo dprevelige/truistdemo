@@ -1,0 +1,19 @@
+:root {
+  --heading-font-family: "Truist Trio Var", "Source Sans 3", Arial, sans-serif;
+  --body-font-family: "Truist Trio Var", "Source Sans 3", Arial, sans-serif;
+  --background-color: rgb(255, 255, 255);
+  --text-color: rgb(33, 37, 41);
+  --link-color: rgb(46, 26, 71);
+  --link-hover-color: rgb(0, 86, 179);
+  --section-padding: 40px;
+  --nav-height: 107.5px;
+
+  /* Truist brand colors */
+  --color-truist-purple: rgb(46, 26, 71);
+  --color-truist-purple-dark: rgb(64, 37, 97);
+  --color-truist-purple-light: rgb(241, 239, 248);
+  --color-truist-light-gray: rgb(247, 247, 247);
+  --color-truist-gray-bg: rgb(248, 249, 250);
+}
+
+html, body { overflow: auto !important; }

@@ -1,0 +1,99 @@
+.article-cards-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Section-level gray background */
+main > .section:has(.article-cards-wrapper) {
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 40px 0;
+}
+
+/* Eyebrow text above the block */
+main > .section:has(.article-cards-wrapper) .default-content-wrapper p:first-child {
+  color: rgb(124, 105, 146);
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+main > .section:has(.article-cards-wrapper) .default-content-wrapper h2 {
+  color: rgb(46, 26, 71);
+  font-size: 28px;
+  font-weight: 200;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.article-cards {
+  --card-bg: rgb(227, 223, 239);
+  --card-radius: 40px;
+  --card-padding: 30px 24px 40px;
+  --heading-color: rgb(46, 26, 71);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 0;
+}
+
+.article-cards > div {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 320px;
+}
+
+.article-cards > div > div:first-child {
+  margin-bottom: 20px;
+}
+
+.article-cards > div > div:first-child img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.article-cards h3 {
+  color: var(--heading-color);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.article-cards p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 8px;
+  color: var(--text-color);
+}
+
+main .article-cards a.button:any-link {
+  color: var(--link-color);
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 400;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+main .article-cards a.button:any-link:hover {
+  color: var(--link-hover-color);
+}
+
+@media (width >= 900px) {
+  .article-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
